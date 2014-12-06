@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206220222) do
+ActiveRecord::Schema.define(version: 20141206222028) do
 
   create_table "messages", force: true do |t|
     t.string   "subject"
@@ -20,13 +20,6 @@ ActiveRecord::Schema.define(version: 20141206220222) do
     t.datetime "read_at"
     t.boolean  "deleted"
     t.integer  "missed_connection_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "missed_connection_question_answers", force: true do |t|
-    t.integer  "missed_connection_question_id"
-    t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,6 +40,8 @@ ActiveRecord::Schema.define(version: 20141206220222) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "location"
+    t.text     "question"
+    t.text     "answer"
   end
 
   create_table "users", force: true do |t|

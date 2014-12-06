@@ -11,29 +11,28 @@ MissedConnection.create(
   longitude: -73.933592,
   title: 'You were eating pizza',
   body: 'You had sauce on your flannel',
-  user_id: 1
-  question: 'What pattern was on my shirt?'
-  text: 'Flannel Plaid'
-  )
+  user_id: 1,
+  question: 'What color shirt was I wearing?',
+  answer: 'Plaid'
+)
 
 MissedConnection.create(
   latitude: 40.706709,
   longitude: -73.923516,
   title: 'Cobra Club',
   body: 'Drunk karoke. You sang Backstreet Boys with your bros and made my heart palpitate.',
-  user_id: 1
-  question: 'What shape was my mustache?'
+  user_id: 1,
+  question: 'What shape was my mustache?',
   answer: 'Handlebar'
 )
-
 
 MissedConnection.create(
   latitude: 40.703515,
   longitude: -73.926153,
   title: 'Three Diamond Door',
   body: 'I can\'t stop dreaming about your Mike Tyson tattoo',
-  user_id: 1
-  question: 'What kind of bike was I riding?'
+  user_id: 1,
+  question: 'What kind of bike was I riding?',
   answer: 'fixie'
 )
 
@@ -42,8 +41,8 @@ MissedConnection.create(
   longitude: -73.925414,
   title: 'Supermarket Babe',
   body: 'You were deciding which vegan chorizo to buy and we briefly made eye contact. Find me on happn cutie.',
-  user_id: 1
-  question: 'What kind of fruit did I have in my basket?'
+  user_id: 1,
+  question: 'What kind of fruit did I have in my basket?',
   answer: 'banana'
 )
 
