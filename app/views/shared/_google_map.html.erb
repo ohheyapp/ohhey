@@ -1,5 +1,6 @@
 <script type="text/javascript">
   var map;
+  var markers = [];
 
   function initialize() {
     <% if missed_connections.size == 1 %>
@@ -22,6 +23,7 @@
         map: map,
         title: '<%= missed_connection.title %>'
       });
+      markers.push(marker);
 
       var infoWindow = new google.maps.InfoWindow(), marker, i;
 
