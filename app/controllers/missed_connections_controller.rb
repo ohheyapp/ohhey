@@ -3,7 +3,10 @@ class MissedConnectionsController < ApplicationController
     @missed_connections = MissedConnection.all
   end
 
+before_action :authenticate_user!, :except => [:index]
+
   def new
+
     if current_user
       @missed_connection = MissedConnection.new()
     end

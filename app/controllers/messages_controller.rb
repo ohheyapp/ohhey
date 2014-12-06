@@ -17,6 +17,18 @@ class MessagesController < ApplicationController
     end
   end
 
+  def index
+   @user = current_user
+   if params[:mailbox] == "sent"
+     @messages = @user.sent_messages
+   elsif params[:mailbox] == "inbox"
+     @messages = @user.received_messages
+   #elsif params[:mailbox] == "archieved"
+    # @messages = @user.archived_messages
+   end
+  end
+
+
   private
 
   def message_params

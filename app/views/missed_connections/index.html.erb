@@ -1,6 +1,5 @@
 <%= render 'shared/google_map', missed_connections: @missed_connections %>
 
- <%= link_to 'Create', new_missed_connection_path %>
 <div class="container-fluid" id="main">
   <div class="row">
     <div class="col-sm-6 sidebar">
@@ -12,8 +11,17 @@
     <div>
       <ul class="nav navbar-nav">
         <li class="active">
+        <% if current_user %>
+          <li><%= link_to 'Create', new_missed_connection_path %></li>
+          <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to 'Messages', messages_path(:mailbox=>:inbox)%></li>
+
+
+        <% else %>
         <li><%= link_to 'Sign up', new_user_registration_path %> </li>
-        <li><%= link_to 'Login', new_user_session_path %></li> 
+        <li><%= link_to 'Login', new_user_session_path %></li>
+      <% end %>
+
       </ul>
     </div>
   </div>
