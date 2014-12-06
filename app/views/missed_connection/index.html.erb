@@ -15,7 +15,7 @@
           body: '<%= missed_connection.body %>',
           latitude: <%= missed_connection.latitude %>,
           longitude: <%= missed_connection.longitude %>
-        }
+        },
       <% end %>
     ];
 
@@ -25,15 +25,17 @@
       marker = new google.maps.Marker({
         position: position,
         map: map,
-        title: markers[i][0]
+        title: markers[i].title
       });
 
-      //google.maps.event.addListener(marker, 'click', (function(marker, i) {
-      //  return function() {
-      //    infoWindow.setContent(marker[i][0]);
-      //    infoWindow.open(map, marker);
-      //  }
-      //})(marker, i));
+      var infoWindow = new google.maps.InfoWindow(), marker, i;
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infoWindow.setContent(marker.title);
+          infoWindow.open(map, marker);
+        }
+      })(marker, i));
     }
   }
   google.maps.event.addDomListener(window, 'load', initialize);
