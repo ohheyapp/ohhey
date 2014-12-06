@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  missed_connection_id: 1
+  text: MyText
+
+two:
+  missed_connection_id: 1
+  text: MyText

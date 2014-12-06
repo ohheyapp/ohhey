@@ -1,2 +1,8 @@
-<h1>MissedConnectionVerifications#new</h1>
-<p>Find me in app/views/missed_connection_verifications/new.html.erb</p>
+<h1>Missed Connection Verification</h1>
+
+<%= form_for :verification, url: missed_connection_verifications_path(missed_connection_id: @missed_connection.id), method: :post do |f| %>
+  <%= f.label @missed_connection.question %>
+  <%= f.text_field :text %>
+  <br>
+  <%= f.submit class: 'btn btn-primary'  %>
+<% end %>

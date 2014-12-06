@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resources :missed_connections do
     resources :messages
+    resources :verifications, controller: :missed_connection_verifications
   end
-  resources :missed_connection_verifications
 end

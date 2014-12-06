@@ -11,52 +11,27 @@ MissedConnection.create(
   longitude: -73.933592,
   title: 'You were eating pizza',
   body: 'You had sauce on your flannel',
-  user_id: 1
-).tap do |missed_connection|
-  MissedConnectionQuestion.create(
-    missed_connection: missed_connection,
-    text: 'What color shirt was I wearing?'
-  ).tap do |missed_connection_question|
-    MissedConnectionVerification.create(
-      missed_connection_question: missed_connection_question,
-      text: 'Plaid'
-    )
-  end
-end
+  user_id: 1,
+  question: 'What color shirt was I wearing?',
+  answer: 'Plaid'
+)
 
 MissedConnection.create(
   latitude: 40.706709,
   longitude: -73.923516,
   title: 'Cobra Club',
   body: 'Drunk karoke',
-  user_id: 1
-).tap do |missed_connection|
-  MissedConnectionQuestion.create(
-    missed_connection: missed_connection,
-    text: 'What shape was my mustache?'
-  ).tap do |missed_connection_question|
-    MissedConnectionVerification.create(
-      missed_connection_question: missed_connection_question,
-      text: 'Handlebar'
-    )
-  end
-end
+  user_id: 1,
+  question: 'What shape was my mustache?',
+  answer: 'Handlebar'
+)
 
 MissedConnection.create(
   latitude: 40.703515,
   longitude: -73.926153,
   title: 'Three Diamond Door',
   body: 'I can\'t stop dreaming about your Mike Tyson tattoo',
-  user_id: 1
-).tap do |missed_connection|
-  MissedConnectionQuestion.create(
-    missed_connection: missed_connection,
-    text: 'What did I have a tattoo of?'
-  ).tap do |missed_connection_question|
-    MissedConnectionVerification.create(
-      missed_connection_question: missed_connection_question,
-      text: 'the deathly hallows'
-    )
-  end
-end
-
+  user_id: 1,
+  question: 'What did I have a tattoo of?',
+  answer: 'the deathly hallows'
+)
