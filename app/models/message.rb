@@ -9,4 +9,6 @@ class Message < ActiveRecord::Base
     :primary_key => 'user_id',
     :foreign_key => 'receiver_id'
 
+  belongs_to :missed_connection
+
 end
