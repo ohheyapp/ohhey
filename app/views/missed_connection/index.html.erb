@@ -3,10 +3,20 @@
 <div class="container-fluid" id="main">
   <div class="row">
     <div class="col-sm-6 sidebar">
-      <%= link_to image_tag('OHHEYLOGO.png'), '#', id: 'logo' %>
-      
-      <%= link_to 'Sign up', new_user_registration_path %> |
-      <%= link_to 'Login', new_user_session_path %>
+
+        <div class="container-fluid">
+          <div class="navbar-header">
+          <%= link_to image_tag('OHHEYLOGO.png'), '#', id: 'logo' %>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active">
+        <li><%= link_to 'Sign up', new_user_registration_path %> </li>
+        <li><%= link_to 'Login', new_user_session_path %></li> 
+      </ul>
+    </div>
+  </div>
+</nav>
 
       <% @missed_connections.each do |missed_connection| %>
         <p><%= link_to missed_connection.title, '#', class: 'missed-connection', data: { 'missed-connection-id' => missed_connection.id, 'latitude' => missed_connection.latitude, 'longitude' => missed_connection.longitude } %></p>

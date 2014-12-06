@@ -2,10 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-header {
+#navbar-header {
   margin-top: 36px;
   margin-left: 36px;
+}
+
+p a {
+  color: #352E30
+
 }
 
 #topcorner{
