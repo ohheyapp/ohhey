@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 20141206222028) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "location"
     t.text     "question"
     t.text     "answer"
+    t.string   "location"
   end
 
   create_table "users", force: true do |t|
