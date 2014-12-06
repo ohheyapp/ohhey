@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+MissedConnection.create(
+  latitude: 40.705077,
+  longitude: -73.933592,
+  title: 'You were eating pizza',
+  body: 'You had sauce on your flannel'
+)
