@@ -4,14 +4,13 @@
   <div class="row">
     <div class="col-sm-6 sidebar">
       <%= link_to image_tag('OHHEYLOGO.png'), '#', id: 'logo' %>
-      <%= link_to 'Sign up', new_user_registration_path %>
+
+      <%= link_to 'Sign up', new_user_registration_path %> |
+      <%= link_to 'Login', new_user_session_path %>
 
       <% @missed_connections.each do |missed_connection| %>
         <p><%= link_to missed_connection.title, '#', class: 'missed-connection', data: { 'missed-connection-id' => missed_connection.id, 'latitude' => missed_connection.latitude, 'longitude' => missed_connection.longitude } %></p>
       <% end %>
-
-      <%= link_to 'Sign up', new_user_registration_path %> |
-      <%= link_to 'Login', new_user_session_path %>
     </div>
 
     <div id="map-canvas" class="col-sm-6"></div>
