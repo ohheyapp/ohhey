@@ -33,7 +33,7 @@ before_action :authenticate_user!, :except => [:index]
   private
 
   def missed_connection_params
-    params.require(:missed_connection).permit(:user_id,:title, :body, :latitude, :longitude, :location)
+    params.require(:missed_connection).permit(:user_id, :title, :body, :latitude, :longitude, :location, :question, :answer)
   end
 
 end
