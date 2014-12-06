@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'missed_connection#index'
+  root 'missed_connections#index'
   devise_for :users
 
   resources :missed_connections do
