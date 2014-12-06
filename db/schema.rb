@@ -11,16 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206180047) do
+ActiveRecord::Schema.define(version: 20141206214033) do
 
   create_table "messages", force: true do |t|
     t.string   "subject"
     t.text     "body"
     t.integer  "sender_id"
-    t.integer  "receiver_id"
     t.datetime "read_at"
     t.boolean  "deleted"
     t.integer  "missed_connection_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "missed_connection_question_answers", force: true do |t|
+    t.integer  "missed_connection_question_id"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "missed_connection_questions", force: true do |t|
+    t.integer  "missed_connection_id"
+    t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

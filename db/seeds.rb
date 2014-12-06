@@ -12,7 +12,17 @@ MissedConnection.create(
   title: 'You were eating pizza',
   body: 'You had sauce on your flannel',
   user_id: 1
-)
+).tap do |missed_connection|
+  MissedConnectionQuestion.create(
+    missed_connection: missed_connection,
+    text: 'What color shirt was I wearing?'
+  ).tap do |missed_connection_question|
+    MissedConnectionQuestionAnswer.create(
+      missed_connection_question: missed_connection_question,
+      text: 'Plaid'
+    )
+  end
+end
 
 MissedConnection.create(
   latitude: 40.706709,
