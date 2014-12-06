@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
-    raise
+    # raise
   end
 
   def create
