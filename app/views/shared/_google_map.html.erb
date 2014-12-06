@@ -29,7 +29,7 @@
 
       google.maps.event.addListener(marker, 'click', (function(marker) {
         return function() {
-          infoWindow.setContent('<%= escape_javascript(render 'info_window', missed_connection: missed_connection) %>');
+          infoWindow.setContent('<%= escape_javascript(render '/shared/info_window', missed_connection: missed_connection) %>');
           infoWindow.open(map, marker);
         }
       })(marker));
