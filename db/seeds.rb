@@ -12,3 +12,10 @@ MissedConnection.create(
   title: 'You were eating pizza',
   body: 'You had sauce on your flannel'
 )
+
+MissedConnection.create(
+  latitude: 40.706709,
+  longitude: -73.923516,
+  title: 'Cobra Club',
+  body: 'Drunk karoke'
+)
