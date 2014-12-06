@@ -4,40 +4,34 @@
   function initialize() {
     var mapOptions = {
       zoom: 14,
-      center: new google.maps.LatLng(40.7100474, -73.9263586)
+      center: new google.maps.LatLng(40.706709, -73.923516)
     };
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-    var markers = [
-      <% @missed_connections.each do |missed_connection| %>
-        {
-          title: '<%= missed_connection.title %>',
-          body: '<%= missed_connection.body %>',
-          latitude: <%= missed_connection.latitude %>,
-          longitude: <%= missed_connection.longitude %>
-        },
-      <% end %>
-    ];
+    <% @missed_connections.each do |missed_connection| %>
 
-    for( i = 0; i < markers.length; i++ ) {
-      var position = new google.maps.LatLng(markers[i].latitude, markers[i].longitude);
+      var position = new google.maps.LatLng(<%= missed_connection.latitude %>, <%= missed_connection.longitude %>);
 
       marker = new google.maps.Marker({
         position: position,
         map: map,
-        title: markers[i].title
+        title: '<%= missed_connection.title %>'
       });
 
       var infoWindow = new google.maps.InfoWindow(), marker, i;
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-          infoWindow.setContent(marker.title);
+          infoWindow.setContent('<%= escape_javascript(render 'info_window', missed_connection: missed_connection) %>');
           infoWindow.open(map, marker);
         }
       })(marker, i));
-    }
+
+    <% end %>
+
   }
+
+
   google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
