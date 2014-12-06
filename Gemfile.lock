@@ -39,7 +39,6 @@ GEM
     builder (3.2.2)
     coderay (1.1.0)
     debug_inspector (0.0.2)
-    dotenv (1.0.2)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -47,6 +46,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dotenv (1.0.2)
     erubis (2.7.0)
     execjs (2.2.2)
     foreman (0.76.0)
@@ -147,8 +147,8 @@ DEPENDENCIES
   awesome_print
   better_errors
   binding_of_caller
-  foreman
   devise
+  foreman
   jbuilder (~> 2.0)
   jquery-rails
   pry-rails
