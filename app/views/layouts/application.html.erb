@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Oh hey</title>
+<title>Oh hey</title>
+  <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', 'data-turbolinks-track' => true %>
+
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?sensor=false' %>
   <%= javascript_include_tag 'application' %>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
