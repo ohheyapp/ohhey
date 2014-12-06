@@ -30,7 +30,17 @@ MissedConnection.create(
   title: 'Cobra Club',
   body: 'Drunk karoke',
   user_id: 1
-)
+).tap do |missed_connection|
+  MissedConnectionQuestion.create(
+    missed_connection: missed_connection,
+    text: 'What shape was my mustache?'
+  ).tap do |missed_connection_question|
+    MissedConnectionQuestionAnswer.create(
+      missed_connection_question: missed_connection_question,
+      text: 'Handlebar'
+    )
+  end
+end
 
 MissedConnection.create(
   latitude: 40.703515,
@@ -38,4 +48,15 @@ MissedConnection.create(
   title: 'Three Diamond Door',
   body: 'I can\'t stop dreaming about your Mike Tyson tattoo',
   user_id: 1
-)
+).tap do |missed_connection|
+  MissedConnectionQuestion.create(
+    missed_connection: missed_connection,
+    text: 'What did I have a tattoo of?'
+  ).tap do |missed_connection_question|
+    MissedConnectionQuestionAnswer.create(
+      missed_connection_question: missed_connection_question,
+      text: 'the deathly hallows'
+    )
+  end
+end
+
