@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'messages/new'
+
+  get 'messages/create'
+
   root 'missed_connection#index'
 
 
   devise_for :users
+
+  resources :messages
+
+  get 'messages/new/:receiver_id' => 'messages#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
