@@ -18,3 +18,8 @@ group :development do
   gem 'binding_of_caller'
   gem 'awesome_print'
 end
+
+
+gem 'foreman'
+gem 'unicorn'
+gem 'rails_12factor', group: :production
