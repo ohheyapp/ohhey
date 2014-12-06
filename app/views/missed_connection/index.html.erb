@@ -41,7 +41,9 @@
     <div class="col-sm-6 sidebar">
       <%= image_tag 'OHHEYLOGO.svg' %>
       <%= link_to 'Sign up', new_user_registration_path %>
-      <!--> render missed connections <!-->
+      <% @missed_connections.each do |missed_connection| %>
+        <p> <%= missed_connection.title %></p>
+      <% end %>
 
     </div>
 
