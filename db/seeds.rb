@@ -12,7 +12,9 @@ MissedConnection.create(
   title: 'You were eating pizza',
   body: 'You had sauce on your flannel',
   user_id: 1
-)
+  question: 'What pattern was on my shirt?'
+  text: 'Flannel Plaid'
+  )
 
 MissedConnection.create(
   latitude: 40.706709,
@@ -20,7 +22,10 @@ MissedConnection.create(
   title: 'Cobra Club',
   body: 'Drunk karoke. You sang Backstreet Boys with your bros and made my heart palpitate.',
   user_id: 1
+  question: 'What shape was my mustache?'
+  answer: 'Handlebar'
 )
+
 
 MissedConnection.create(
   latitude: 40.703515,
@@ -28,6 +33,8 @@ MissedConnection.create(
   title: 'Three Diamond Door',
   body: 'I can\'t stop dreaming about your Mike Tyson tattoo',
   user_id: 1
+  question: 'What kind of bike was I riding?'
+  answer: 'fixie'
 )
 
 MissedConnection.create(
@@ -36,6 +43,8 @@ MissedConnection.create(
   title: 'Supermarket Babe',
   body: 'You were deciding which vegan chorizo to buy and we briefly made eye contact. Find me on happn cutie.',
   user_id: 1
+  question: 'What kind of fruit did I have in my basket?'
+  answer: 'banana'
 )
 
 MissedConnection.create(
@@ -43,5 +52,7 @@ MissedConnection.create(
   longitude: -73.947451,
   title: 'Put Put Champion',
   body: 'You you killing it at put put, but left before I could buy you a pickle back.',
-  user_id: 1
+  user_id: 1,
+  question: 'What did I have a tattoo of?',
+  answer: 'the deathly hallows'
 )

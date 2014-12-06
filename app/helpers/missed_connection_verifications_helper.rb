@@ -1,0 +1,2 @@
+module MissedConnectionVerificationsHelper
+end

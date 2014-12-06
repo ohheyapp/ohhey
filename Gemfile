@@ -9,6 +9,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
+gem 'haml'
+gem 'simple_form', '~> 3.1.0rc1'
+gem 'geocoder'
+
 
 group :production do
   gem 'unicorn'

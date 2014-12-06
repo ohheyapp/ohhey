@@ -3,13 +3,18 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
-    @missed_connection = MissedConnection.find(params[:mc])
+    @missed_connection = MissedConnection.find(params[:missed_connection_id])
+    @missed_connections = [@missed_connection]
   end
 
   def create
-    @message = Message.new(message_params)
-    @message.sender_id = current_user.id
-    @message.save
+    @message = Message.new(message_params.merge(sender_id: current_user.id))
+
+    if @message.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
