@@ -18,7 +18,7 @@ MissedConnection.create(
   latitude: 40.706709,
   longitude: -73.923516,
   title: 'Cobra Club',
-  body: 'Drunk karoke',
+  body: 'Drunk karoke. You sang Backstreet Boys with your bros and made my heart palpitate.',
   user_id: 1
 )
 
@@ -27,5 +27,21 @@ MissedConnection.create(
   longitude: -73.926153,
   title: 'Three Diamond Door',
   body: 'I can\'t stop dreaming about your Mike Tyson tattoo',
+  user_id: 1
+)
+
+MissedConnection.create(
+  latitude: 40.703386,
+  longitude: -73.925414,
+  title: 'Supermarket Babe',
+  body: 'You were deciding which vegan chorizo to buy and we briefly made eye contact. Find me on happn cutie.',
+  user_id: 1
+)
+
+MissedConnection.create(
+  latitude: 40.711380,
+  longitude: -73.947451,
+  title: 'Put Put Champion',
+  body: 'You you killing it at put put, but left before I could buy you a pickle back.',
   user_id: 1
 )
