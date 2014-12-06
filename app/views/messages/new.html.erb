@@ -1,5 +1,7 @@
 <%= form_for @message do |f| %>
   <%= f.label :body %><br>
   <%= f.text_area :body %><br>
+  <%= f.hidden_field :receiver_id, value: @missed_connection.user_id %>
+  <%= f.hidden_field :missed_connection_id, value: @missed_connection.id %>
   <%= f.submit "Send Message" %>
 <% end %>
