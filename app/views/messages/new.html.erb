@@ -19,10 +19,11 @@
 </nav>
 
       <%= form_for [@missed_connection, @message] do |f| %>
-        <%= f.label :body %><br>
-        <%= f.text_area :body %><br>
+        <div class="form-group">
+          <%= f.text_area :body, class: "form-control send-message" %>
+        </div>
         <%= f.hidden_field :missed_connection_id, value: @missed_connection.id %>
-        <%= f.submit "Send Message" %>
+        <%= f.submit "Send Message", class: "btn btn-default" %>
       <% end %>
     </div>
 
