@@ -17,7 +17,7 @@ MissedConnection.create(
     missed_connection: missed_connection,
     text: 'What color shirt was I wearing?'
   ).tap do |missed_connection_question|
-    MissedConnectionQuestionAnswer.create(
+    MissedConnectionVerification.create(
       missed_connection_question: missed_connection_question,
       text: 'Plaid'
     )
@@ -35,7 +35,7 @@ MissedConnection.create(
     missed_connection: missed_connection,
     text: 'What shape was my mustache?'
   ).tap do |missed_connection_question|
-    MissedConnectionQuestionAnswer.create(
+    MissedConnectionVerification.create(
       missed_connection_question: missed_connection_question,
       text: 'Handlebar'
     )
@@ -53,7 +53,7 @@ MissedConnection.create(
     missed_connection: missed_connection,
     text: 'What did I have a tattoo of?'
   ).tap do |missed_connection_question|
-    MissedConnectionQuestionAnswer.create(
+    MissedConnectionVerification.create(
       missed_connection_question: missed_connection_question,
       text: 'the deathly hallows'
     )
