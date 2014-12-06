@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   def new
     @message = Message.new
     @missed_connection = MissedConnection.find(params[:missed_connection_id])
+    @missed_connections = [@missed_connection]
   end
 
   def create
