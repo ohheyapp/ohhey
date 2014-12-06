@@ -1,40 +1,12 @@
-<script type="text/javascript">
-  var map;
+<%= render 'shared/google_map', missed_connections: @missed_connections %>
 
-  function initialize() {
-    var mapOptions = {
-      zoom: 14,
-      center: new google.maps.LatLng(40.706709, -73.923516)
-    };
-    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+<div class="container-fluid" id="main">
+  <div class="row">
+    <div class="col-sm-6 sidebar">
+      <%= image_tag 'OHHEYLOGO.svg' %>
+      <%= link_to 'Sign up', new_user_registration_path %>
+    </div>
 
-    <% @missed_connections.each do |missed_connection| %>
-
-      var position = new google.maps.LatLng(<%= missed_connection.latitude %>, <%= missed_connection.longitude %>);
-
-      marker = new google.maps.Marker({
-        position: position,
-        map: map,
-        title: '<%= missed_connection.title %>'
-      });
-
-      var infoWindow = new google.maps.InfoWindow(), marker, i;
-
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infoWindow.setContent('<%= escape_javascript(render 'info_window', missed_connection: missed_connection) %>');
-          infoWindow.open(map, marker);
-        }
-      })(marker, i));
-
-    <% end %>
-
-  }
-
-
-  google.maps.event.addDomListener(window, 'load', initialize);
-</script>
-
-<%= link_to 'Sign up', new_user_registration_path %>
-
-<div id="map-canvas"></div>
+    <div id="map-canvas" class="col-sm-6"></div>
+  </div>
+</div>

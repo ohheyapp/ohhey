@@ -2,8 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html, body, #map-canvas {
-  height: 100%;
-  margin: 0px;
-  padding: 0px
+
+
+html,body{
+  	height:100%;
+}
+
+body{
+  	padding-top:50px; /*padding for navbar*/
+}
+
+
+#main, #main>.row {
+	height:100%;
+}
+
+#main>.row {
+    overflow-y:scroll;
+}
+
+#left {
+	height:100%;
+}
+
+#map-canvas {
+	//width:3%;
+    height:calc(100% - 0);
+    position:absolute;
+    right:0px;
+    top:0px;
+    bottom:0;
+    overflow:hidden;
 }
