@@ -1,5 +1,6 @@
 <script type="text/javascript">
-  var map;
+  var map, infoWindow;
+  var markers = [];
 
   function initialize() {
     <% if missed_connections.size == 1 %>
@@ -22,15 +23,16 @@
         map: map,
         title: '<%= missed_connection.title %>'
       });
+      markers.push(marker);
 
-      var infoWindow = new google.maps.InfoWindow(), marker, i;
+      infoWindow = new google.maps.InfoWindow(), marker;
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+      google.maps.event.addListener(marker, 'click', (function(marker) {
         return function() {
           infoWindow.setContent('<%= escape_javascript(render 'info_window', missed_connection: missed_connection) %>');
           infoWindow.open(map, marker);
         }
-      })(marker, i));
+      })(marker));
 
       <% if missed_connections.size == 1 %>
         map.fitBounds(bounds);
