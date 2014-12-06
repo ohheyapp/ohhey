@@ -1,6 +1,31 @@
-<%= form_for [@missed_connection, @message] do |f| %>
-  <%= f.label :body %><br>
-  <%= f.text_area :body %><br>
-  <%= f.hidden_field :missed_connection_id, value: @missed_connection.id %>
-  <%= f.submit "Send Message" %>
-<% end %>
+<%= render 'shared/google_map', missed_connections: @missed_connections %>
+
+<div class="container-fluid" id="main">
+  <div class="row">
+    <div class="col-sm-6 sidebar">
+
+        <div class="container-fluid">
+          <div class="navbar-header">
+          <%= link_to image_tag('OHHEYLOGO.png'), '#', id: 'logo' %>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active">
+        <li><%= link_to 'Sign up', new_user_registration_path %> </li>
+        <li><%= link_to 'Login', new_user_session_path %></li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      <%= form_for [@missed_connection, @message] do |f| %>
+        <%= f.label :body %><br>
+        <%= f.text_area :body %><br>
+        <%= f.hidden_field :missed_connection_id, value: @missed_connection.id %>
+        <%= f.submit "Send Message" %>
+      <% end %>
+    </div>
+
+    <div id="map-canvas" class="col-sm-6"></div>
+  </div>
+</div>
