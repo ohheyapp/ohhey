@@ -3,35 +3,39 @@
 <div class="container-fluid" id="main">
   <div class="row">
     <div class="col-sm-6 sidebar">
-
-        <div class="container-fluid">
-          <div class="navbar-header">
+      <div class="container-fluid">
+        <div class="navbar-header">
           <%= link_to image_tag('OHHEYLOGO.png'), '#', id: 'logo' %>
-    </div>
-    <div>
-      <ul class="nav navbar-nav">
-        <li class="active">
-        <% if current_user %>
-          <li><%= link_to 'Create', new_missed_connection_path %></li>
-          <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-          <li><%= link_to 'Messages', messages_path(:mailbox=>:inbox)%></li>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li class="active">
+            <% if current_user %>
+              <li><%= link_to 'Create', new_missed_connection_path %></li>
+              <li><%= link_to 'Messages', messages_path(:mailbox=>:inbox)%></li>
+              <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
 
 
-        <% else %>
-        <li><%= link_to 'Sign up', new_user_registration_path %> </li>
-        <li><%= link_to 'Login', new_user_session_path %></li>
-      <% end %>
+            <% else %>
 
-      </ul>
-    </div>
-  </div>
-</nav>
+              <li><%= link_to 'Sign up', new_user_registration_path %> </li>
+              <li><%= link_to 'Login', new_user_session_path %></li>
+            <% end %>
 
+          </ul>
+        </div>
+      </div>
       <% @missed_connections.each do |missed_connection| %>
         <p><%= link_to missed_connection.title, '#', class: 'missed-connection', data: { 'missed-connection-id' => missed_connection.id, 'latitude' => missed_connection.latitude, 'longitude' => missed_connection.longitude } %></p>
       <% end %>
     </div>
-
-    <div id="map-canvas" class="col-sm-6"></div>
   </div>
+
+  <div id="map-canvas" class="col-sm-6"></div>
+</div>
+
+<div id="footer">
+<div class="container">
+  <p class="muted credit">© Oh Hey Bushwick 2014</p>
+</div>
 </div>
