@@ -17,6 +17,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params.merge(sender_id: current_user.id))
+    @missed_connections = [@missed_connection]
 
     if @message.save
       redirect_to root_path

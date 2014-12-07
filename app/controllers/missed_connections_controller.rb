@@ -19,7 +19,7 @@ class MissedConnectionsController < ApplicationController
       flash[:notice] = 'Saved!'
       redirect_to root_path
     else
-      flash[:notice] = 'Could not find that location. Please try again'
+      flash[:alert] = 'Could not find that location. Please try again'
       render :new
     end
   end
