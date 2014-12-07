@@ -8,54 +8,75 @@
   font-style: normal;
   font-weight: 900;
 
-  src: url('<%= asset_path('/lato/lato-black.eot') %>');
-  src: url('<%= asset_path('/lato/lato-black.eot?#iefix') %>') format('embedded-opentype'), url('<%= asset_path('/lato/lato-black.woff') %>') format('woff'), url('<%= asset_path('/lato/lato-black.ttf') %>') format('truetype'), url('<%= asset_path('lato/lato-black.svg#latoblack') %>') format('svg');
+  src: font-url('lato/lato-black.eot');
+  src: font-url('lato/lato-black.eot?#iefix') format('embedded-opentype'),
+       font-url('lato/lato-black.woff') format('woff'),
+       font-url('lato/lato-black.ttf') format('truetype'),
+       font-url('lato/lato-black.svg#latoblack') format('svg');
   }
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: bold;
 
-  src: url('<%= asset_path('lato/lato-bold.eot') %>');
-  src: url('<%= asset_path('lato/lato-bold.eot?#iefix') %>') format('embedded-opentype'), url('<%= asset_path('lato/lato-bold.woff') %>') format('woff'), url('<%= asset_path('lato/lato-bold.ttf') %>') format('truetype'), url('<%= asset_path('lato/lato-bold.svg#latobold') %>') format('svg');
+  src: font-url('lato/lato-bold.eot');
+  src: font-url('lato/lato-bold.eot?#iefix') format('embedded-opentype'),
+       font-url('lato/lato-bold.woff') format('woff'),
+       font-url('lato/lato-bold.ttf') format('truetype'),
+       font-url('lato/lato-bold.svg#latobold') format('svg');
   }
 @font-face {
   font-family: 'Lato';
   font-style: italic;
   font-weight: bold;
 
-  src: url('<%= asset_path('lato/lato-bolditalic.eot') %>');
-  src: url('<%= asset_path('lato/lato-bolditalic.eot?#iefix') %>') format('embedded-opentype'), url('<%= asset_path('lato/lato-bolditalic.woff') %>') format('woff'), url('<%= asset_path('lato/lato-bolditalic.ttf') %>') format('truetype'), url('../fonts/lato/lato-bolditalic.svg#latobold-italic') format('svg');
+  src: font-url('lato/lato-bolditalic.eot');
+  src: font-url('lato/lato-bolditalic.eot?#iefix') format('embedded-opentype'),
+       font-url('lato/lato-bolditalic.woff') format('woff'),
+       font-url('lato/lato-bolditalic.ttf') format('truetype'),
+       font-url('lato/lato-bolditalic.svg#latobold-italic') format('svg');
   }
 @font-face {
   font-family: 'Lato';
   font-style: italic;
   font-weight: normal;
 
-  src: url('<%= asset_path('lato/lato-italic.eot') %>');
-  src: url('<%= asset_path('lato/lato-italic.eot?#iefix') %>') format('embedded-opentype'), url('<%= asset_path('lato/lato-italic.woff') %>') format('woff'), url('<%= asset_path('lato/lato-italic.ttf') %>') format('truetype'), url('<%= asset_path('/lato/lato-italic.svg#latoitalic') %>') format('svg');
+  src: font-url('lato/lato-italic.eot');
+  src: font-url('lato/lato-italic.eot?#iefix') format('embedded-opentype'),
+       font-url('lato/lato-italic.woff') format('woff'),
+       font-url('lato/lato-italic.ttf') format('truetype'),
+       font-url('lato/lato-italic.svg#latoitalic') format('svg');
   }
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 300;
 
-  src: url('<%= asset_path('/lato/lato-light.eot') %>');
-  src: url('../fonts/lato/lato-light.eot?#iefix') format('embedded-opentype'), url('../fonts/lato/lato-light.woff') format('woff'), url('../fonts/lato/lato-light.ttf') format('truetype'), url('../fonts/lato/lato-light.svg#latolight') format('svg');
+  src: font-url('lato/lato-light.eot');
+  src: font-url('lato/lato-light.eot?#iefix') format('embedded-opentype'),
+       font-url('lato/lato-light.woff') format('woff'),
+       font-url('lato/lato-light.ttf') format('truetype'),
+       font-url('lato/lato-light.svg#latolight') format('svg');
   }
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: normal;
 
-  src: url('<%= asset_path('lato/lato-regular.eot') %>');
-  src: url('<%= asset_path('lato/lato-regular.eot?#iefix') %>') format('embedded-opentype'), url('<%= asset_path('lato/lato-regular.woff') %>') format('woff'), url('<%= asset_path('lato/lato-regular.ttf') %>') format('truetype'), url('<%= asset_path('lato/lato-regular.svg#latoregular') %>') format('svg');
+  src: font-url('lato/lato-regular.eot');
+  src: font-url('lato/lato-regular.eot?#iefix') format('embedded-opentype'),
+       font-url('lato/lato-regular.woff') format('woff'),
+       font-url('lato/lato-regular.ttf') format('truetype'),
+       font-url('lato/lato-regular.svg#latoregular') format('svg');
   }
 @font-face {
   font-family: 'Flat-UI-Pro-Icons';
 
-  src: url('<%= asset_path('/glyphicons/flat-ui-icons-regular.eot') %>');
-  src: url('../fonts/glyphicons/flat-ui-icons-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons/flat-ui-icons-regular.woff') format('woff'), url('../fonts/glyphicons/flat-ui-icons-regular.ttf') format('truetype'), url('../fonts/glyphicons/flat-ui-icons-regular.svg#flat-ui-icons-regular') format('svg');
+  src: font-url('glyphicons/flat-ui-icons-regular.eot');
+  src: font-url('glyphicons/flat-ui-icons-regular.eot?#iefix') format('embedded-opentype'),
+       font-url('glyphicons/flat-ui-icons-regular.woff') format('woff'),
+       font-url('glyphicons/flat-ui-icons-regular.ttf') format('truetype'),
+       font-url('glyphicons/flat-ui-icons-regular.svg#flat-ui-icons-regular') format('svg');
   }
 [class^="fui-"],
 [class*="fui-"] {

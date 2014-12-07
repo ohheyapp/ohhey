@@ -6,15 +6,15 @@ $(document).ready(function(){
   $('.missed-connection').click(function(event) {
     event.preventDefault();
     var missedConnectionId = $(this).data('missed-connection-id');
-    var marker = $.grep(markers, function(e) {
+    var marker = $.grep(App.markers, function(e) {
       return e.missed_connection_id === missedConnectionId;
     })[0];
     var latitude = $(this).data('latitude')
     var longitude = $(this).data('longitude')
     var position = new google.maps.LatLng(latitude, longitude);
     google.maps.event.trigger(marker, 'click')
-    map.panTo(position);
-    map.setZoom(15);
+    App.map.panTo(position);
+    App.map.setZoom(15);
   });
 
 });
