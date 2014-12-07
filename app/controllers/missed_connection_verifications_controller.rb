@@ -8,6 +8,7 @@ class MissedConnectionVerificationsController < ApplicationController
 
   def create
     @missed_connection = MissedConnection.find(params[:missed_connection_id])
+    @missed_connections = [@missed_connection]
 
     if verification_params[:text] == @missed_connection.answer
       redirect_to new_missed_connection_message_path(@missed_connection)
