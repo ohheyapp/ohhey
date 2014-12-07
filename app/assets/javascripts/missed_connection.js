@@ -6,7 +6,9 @@ $(document).ready(function(){
   $('.missed-connection').click(function(event) {
     event.preventDefault();
     var missedConnectionId = $(this).data('missed-connection-id');
-    var marker = markers[missedConnectionId - 1];
+    var marker = $.grep(markers, function(e) {
+      return e.missed_connection_id === missedConnectionId;
+    })[0];
     var latitude = $(this).data('latitude')
     var longitude = $(this).data('longitude')
     var position = new google.maps.LatLng(latitude, longitude);

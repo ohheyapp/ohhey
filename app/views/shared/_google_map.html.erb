@@ -21,7 +21,8 @@
       marker = new google.maps.Marker({
         position: position,
         map: map,
-        title: '<%= missed_connection.title %>'
+        title: '<%= missed_connection.title %>',
+        missed_connection_id: <%= missed_connection.id %>
       });
       markers.push(marker);
 
