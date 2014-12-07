@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
   private
 
   def set_missed_connections
-    @missed_connections = MissedConnection.all
+    @missed_connections = MissedConnection.order(created_at: :desc)
   end
 end
