@@ -12,6 +12,7 @@ class MissedConnectionVerificationsController < ApplicationController
     if verification_params[:text] == @missed_connection.answer
       redirect_to new_missed_connection_message_path(@missed_connection)
     else
+      flash[:alert] = "Sorry, it's not love."
       render :new
     end
   end

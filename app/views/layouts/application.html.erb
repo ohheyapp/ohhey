@@ -12,19 +12,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if notice %>
-    <p class="notice"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert"><%= alert %></p>
-  <% end %>
-
   <%= render 'shared/google_map', missed_connections: @missed_connections %>
 
   <div class="container-fluid" id="main">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <div class="text-center">
+        <div class="alerts text-center">
+          <% if notice %>
+            <p class="alert alert-success"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-warning"><%= alert %></p>
+          <% end %>
+
           <%= link_to image_tag('logo.png'), root_path, class: 'img-responsive', id: 'logo' %>
         </div>
         <div class="text-center navigation">
