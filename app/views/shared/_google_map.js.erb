@@ -22,7 +22,7 @@ function initialize() {
       position: position,
       map: App.map,
       title: '<%= missed_connection.title %>',
-      missed_connection_id: <%= missed_connection.id %>
+      missedConnectionId: <%= missed_connection.id %>
     });
 
     App.markers.push(marker);
@@ -31,8 +31,16 @@ function initialize() {
 
     google.maps.event.addListener(marker, 'click', (function(marker) {
       return function() {
+        $('.missed-connection[data-missed-connection-id]').removeClass('active');
+        $('.missed-connection[data-missed-connection-id="' + marker.missedConnectionId + '"]').addClass('active');
         infoWindow.setContent('<%= escape_javascript(render '/shared/info_window', missed_connection: missed_connection) %>');
         infoWindow.open(App.map, marker);
+      }
+    })(marker));
+
+    google.maps.event.addListener(infoWindow, 'closeclick', (function(marker) {
+      return function() {
+        $('.missed-connection[data-missed-connection-id]').removeClass('active');
       }
     })(marker));
 

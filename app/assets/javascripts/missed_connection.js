@@ -5,9 +5,9 @@ $(document).ready(function(){
 
   $('.missed-connection').click(function(event) {
     event.preventDefault();
-    var missedConnectionId = $(this).data('missed-connection-id');
+    var missedConnectionId = $(this).data('missedConnectionId');
     var marker = $.grep(App.markers, function(e) {
-      return e.missed_connection_id === missedConnectionId;
+      return e.missedConnectionId === missedConnectionId;
     })[0];
     var latitude = $(this).data('latitude')
     var longitude = $(this).data('longitude')
