@@ -2,8 +2,8 @@
 <html>
 <head>
 <title>Oh hey</title>
-  <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', 'data-turbolinks-track' => true %>
-<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'http://fonts.googleapis.com/css?family=Lato' %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?sensor=false' %>
@@ -19,7 +19,33 @@
     <p class="alert"><%= alert %></p>
   <% end %>
 
-  <%= yield %>
+  <%= render 'shared/google_map', missed_connections: @missed_connections %>
+
+  <div class="container-fluid" id="main">
+    <div class="row">
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="text-center">
+          <%= link_to image_tag('logo.png'), root_path, class: 'img-responsive', id: 'logo' %>
+        </div>
+        <div class="text-center navigation">
+          <% if current_user %>
+            <p><%= link_to 'Create', new_missed_connection_path %> |
+            <%= link_to 'Messages', messages_path(:mailbox=>:inbox)%> |
+            <%= link_to 'Log Out', destroy_user_session_path, method: :delete %></p>
+          <% else %>
+            <p><%= link_to 'Sign up', new_user_registration_path %> |
+            <%= link_to 'Login', new_user_session_path %></p>
+          <% end %>
+        </div>
+
+        <div class="text-center">
+          <%= yield %>
+        </div>
+
+      </div>
+      <div id="map-canvas" class="col-sm-8 col-md-8 col-lg-8"></div>
+    </div>
+  </div>
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

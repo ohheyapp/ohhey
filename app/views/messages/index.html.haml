@@ -1,21 +1,19 @@
-.col-sm-12.col-md-4.col-md-offset-4
-  %h1 Messages
-  - if params[:mailbox] == 'inbox'
-    %strong= link_to 'Sent Messages', messages_path(:mailbox=>:sent)
-  - if params[:mailbox] == 'sent'
-    %strong= link_to 'Received Messages', messages_path(:mailbox=>:inbox)
-  %br
-  %hr
+%h4 Messages
+- if params[:mailbox] == 'inbox'
+  %strong= link_to 'Sent Messages', messages_path(:mailbox=>:sent)
+- if params[:mailbox] == 'sent'
+  %strong= link_to 'Received Messages', messages_path(:mailbox=>:inbox)
+%br
+%hr
 
-  #accordion
-  - @messages.group_by {|m| m['missed_connection_id']}.each do |mc, message|
-    %h3= "Missed Connection at #{MissedConnection.find(mc).location}."
-    - message.each do |m|
-      %p.subject= "Subject: #{m.subject}"
-      %strong= "From: #{User.find(m.sender_id).email}."
-      %br
-      %p.messagebody= m.body.gsub(/\n/, '<br />').html_safe
-      %button.btn.btn-small
-        = link_to 'Reply', new_message_path(missed_connection_id: mc)
-      %hr
-
+#accordion
+- @messages.group_by {|m| m['missed_connection_id']}.each do |mc, message|
+  %h5= "Missed Connection at #{MissedConnection.find(mc).location}."
+  - message.each do |m|
+    %p.subject= "Subject: #{m.subject}"
+    %strong= "From: #{User.find(m.sender_id).email}."
+    %br
+    %p.messagebody= m.body.gsub(/\n/, '<br />').html_safe
+    %button.btn.btn-small
+      = link_to 'Reply', new_message_path(missed_connection_id: mc)
+    %hr

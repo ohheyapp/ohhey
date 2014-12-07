@@ -3,14 +3,6 @@
 
 $(document).ready(function(){
 
-  $('#logo').click(function(event) {
-    event.preventDefault();
-    var center = new google.maps.LatLng(40.706709, -73.923516);
-    map.setCenter(center);
-    map.setZoom(14);
-    infoWindow.close();
-  });
-
   $('.missed-connection').click(function(event) {
     event.preventDefault();
     var missedConnectionId = $(this).data('missed-connection-id');

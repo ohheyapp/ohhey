@@ -1,6 +1,14 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    if params[:mailbox] == 'sent'
+      @messages = current_user.sent_messages
+    elsif params[:mailbox] == 'inbox'
+      @messages = current_user.received_messages
+    end
+  end
+
   def new
     @message = Message.new
     @missed_connection = MissedConnection.find(params[:missed_connection_id])
@@ -17,18 +25,6 @@ class MessagesController < ApplicationController
       render :new
     end
   end
-
-  def index
-   @user = current_user
-   if params[:mailbox] == "sent"
-     @messages = @user.sent_messages
-   elsif params[:mailbox] == "inbox"
-     @messages = @user.received_messages
-   #elsif params[:mailbox] == "archieved"
-    # @messages = @user.archived_messages
-   end
-  end
-
 
   private
 

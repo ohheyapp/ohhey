@@ -1,4 +1,5 @@
 class Message < ActiveRecord::Base
+  belongs_to :missed_connection
   belongs_to :sender,
     :class_name => 'User',
     :primary_key => 'user_id',
@@ -8,7 +9,5 @@ class Message < ActiveRecord::Base
     :class_name => 'User',
     :primary_key => 'user_id',
     :foreign_key => 'receiver_id'
-
-  belongs_to :missed_connection
 
 end
