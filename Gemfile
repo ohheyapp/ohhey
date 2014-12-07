@@ -12,7 +12,7 @@ gem 'devise'
 gem 'haml'
 gem 'simple_form', '~> 3.1.0rc1'
 gem 'geocoder'
-
+gem 'pry-rails'
 
 group :production do
   gem 'unicorn'
@@ -23,7 +23,6 @@ end
 group :development do
   gem 'spring'
   gem 'sqlite3'
-  gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'awesome_print'
