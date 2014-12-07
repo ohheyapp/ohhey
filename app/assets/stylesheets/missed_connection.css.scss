@@ -2,53 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.navbar-nav {
-  margin: 0px;
-  margin-left: 109px;
-}
 p {
-  margin: 2px;
-}
+  margin: 0;
 
-p a {
-  margin: 0 60px 2px;
-  color: #352E30;
-  font-family: 'Lato', sans-serif;
-}
-
-#topcorner{
-   top:0;
-   right:0;
-}
-
-html,body{
-  height:100%;
-}
-
-body {
-    margin-left: 36px;
-}
-
-#main, #main>.row {
-	height:100%;
-}
-
-#main>.row {
-    overflow-y:scroll;
-}
-
-#left {
-	height:100%;
+  a {
+    margin: 0 60px 2px;
+    color: #352E30;
+    font-family: 'Lato', sans-serif;
+  }
 }
 
 #map-canvas {
-	//width:3%;
-    height:calc(100% - 0);
-    position:absolute;
-    right:0px;
-    top:0px;
-    bottom:0;
-    overflow:hidden;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
 }
 
 .gm-style-iw {
