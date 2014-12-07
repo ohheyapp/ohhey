@@ -35,6 +35,9 @@ function initialize() {
         $('.missed-connection[data-missed-connection-id="' + marker.missedConnectionId + '"]').addClass('active');
         infoWindow.setContent('<%= escape_javascript(render '/shared/info_window', missed_connection: missed_connection) %>');
         infoWindow.open(App.map, marker);
+        var position = new google.maps.LatLng(<%= missed_connection.latitude %>, <%= missed_connection.longitude %>);
+        App.map.panTo(position);
+        App.map.setZoom(15);
       }
     })(marker));
 
