@@ -37,3 +37,10 @@ body {
 .alerts {
   margin-top: 10px;
 }
+
+.sidebar {
+  height: 100%;
+  position: absolute;
+  overflow-y: scroll;
+  padding-bottom: 40px;
+}
