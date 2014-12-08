@@ -6,17 +6,13 @@
   <%= stylesheet_link_tag    'http://fonts.googleapis.com/css?family=Lobster+Two:400' %>
   <%= stylesheet_link_tag    'http://fonts.googleapis.com/css?family=Lato' %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?sensor=false' %>
+  <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js' %>
 
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <script type="text/javascript">
-    <%= render 'shared/google_map.js', missed_connections: @missed_connections %>
-  </script>
-
   <div class="container-fluid" id="main">
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 sidebar">

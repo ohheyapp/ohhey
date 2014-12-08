@@ -14,6 +14,7 @@ gem 'haml'
 gem 'simple_form', '~> 3.1.0rc1'
 gem 'geocoder'
 gem 'pry-rails'
+gem 'active_model_serializers'
 
 group :production do
   gem 'unicorn'
