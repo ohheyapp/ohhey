@@ -21,23 +21,49 @@ body {
   padding: 0;
 }
 
-.navigation {
-  margin-bottom: 40px;
-
-  a, p {
-    margin: 0;
-    font-size: 14px;
-  }
+p {
+  margin: 0 auto;
 }
 
-.alerts {
-  margin-top: 10px;
-}
-
-.sidebar {
+#sidebar {
   height: 100%;
   position: absolute;
   overflow-y: scroll;
   padding-top: 40px;
   padding-bottom: 40px;
+
+  .navigation {
+    margin-bottom: 40px;
+
+    a, p {
+      margin: 0;
+      font-size: 14px;
+    }
+  }
+
+  a {
+    margin: 0 60px 2px;
+    color: #352E30;
+    font-family: 'Lato', sans-serif;
+    &:hover {
+      color: #999999;
+    }
+  }
+
+  .active {
+    color: #1ABC9C;
+  }
+}
+
+#map-canvas {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+
+  .gm-style-iw {
+    width: 300px;
+  }
 }
