@@ -21,6 +21,7 @@ group :production do
   gem 'rails_12factor'
   gem 'pg'
   gem 'newrelic_rpm'
+  gem 'raygun4ruby'
 end
 
 group :development do

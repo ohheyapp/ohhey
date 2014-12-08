@@ -54,6 +54,9 @@ GEM
     haml (4.0.5)
       tilt
     hike (1.2.3)
+    httparty (0.13.3)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.11)
     jbuilder (2.2.5)
       activesupport (>= 3.0.0, < 5)
@@ -69,6 +72,7 @@ GEM
     mime-types (2.4.3)
     minitest (5.4.3)
     multi_json (1.10.1)
+    multi_xml (0.5.5)
     newrelic_rpm (3.9.7.266)
     orm_adapter (0.5.0)
     pg (0.17.1)
@@ -103,6 +107,10 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
     rake (10.4.2)
+    raygun4ruby (1.1.4)
+      httparty (~> 0.11)
+      json
+      rack
     rdoc (4.1.2)
       json (~> 1.4)
     responders (1.1.1)
@@ -164,6 +172,7 @@ DEPENDENCIES
   pry-rails
   rails (= 4.1.6)
   rails_12factor
+  raygun4ruby
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   simple_form (~> 3.1.0rc1)
