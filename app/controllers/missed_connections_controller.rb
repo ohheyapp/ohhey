@@ -16,10 +16,9 @@ class MissedConnectionsController < ApplicationController
     @missed_connection = MissedConnection.new(missed_connection_params.merge(user_id: current_user.id))
 
     if @missed_connection.save
-      flash[:notice] = 'Saved!'
-      redirect_to root_path
+      redirect_to root_path, notice: 'Saved!'
     else
-      flash[:alert] = 'Could not find that location. Please try again'
+      flash.now[:alert] = 'Could not find that location. Please try again'
       render :new
     end
   end

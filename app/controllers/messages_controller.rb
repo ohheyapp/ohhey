@@ -20,8 +20,7 @@ class MessagesController < ApplicationController
     @missed_connections = [@missed_connection]
 
     if @message.save
-      redirect_to root_path
-      flash[:notice] = "Message Sent!"
+      redirect_to root_path, notice: 'Message Sent!'
     else
       render :new
     end
