@@ -3,7 +3,6 @@
 
 var App = {
   markers: [],
-  infoWindows: [],
   baseUrl: '/api/v1/missed_connections/',
 
   initialize: function() {
@@ -26,7 +25,7 @@ var App = {
       success: function(data) {
         var missedConnections = $.makeArray(data.missed_connections);
         App.addMarkers(missedConnections);
-      },
+      }
     });
   },
 
@@ -40,16 +39,14 @@ var App = {
         title: missedConnection.title,
         missedConnectionId: missedConnection.id,
         latitude: missedConnection.latitude,
-        longitude: missedConnection.longitude
+        longitude: missedConnection.longitude,
+        infoWindow: new google.maps.InfoWindow(),
       });
-      var infoWindow = new google.maps.InfoWindow(), marker;
-
       App.markers.push(marker);
-      App.infoWindows.push(infoWindow);
 
       App.addMissedConnectionLinkEvent();
-      App.addMarkerClickEvent(marker, infoWindow, missedConnections);
-      App.addInfoWindowCloseClickEvent(infoWindow);
+      App.addMarkerClickEvent(marker, missedConnections);
+      App.addInfoWindowCloseClickEvent(marker);
 
       if (missedConnections.length === 1) {
         App.setBoundsOfSingleMarker(marker);
@@ -73,8 +70,8 @@ var App = {
   },
 
   closeAllInfoWindows: function() {
-    for (i = 0; i < App.infoWindows.length; i++) {
-      App.infoWindows[i].close();
+    for (i = 0; i < App.markers.length; i++) {
+      App.markers[i].infoWindow.close();
     }
   },
 
@@ -89,7 +86,7 @@ var App = {
     });
   },
 
-  addMarkerClickEvent: function(marker, infoWindow, missedConnections) {
+  addMarkerClickEvent: function(marker, missedConnections) {
     google.maps.event.addListener(marker, 'click', (function(marker) {
       return function() {
         var missedConnection = $.grep(missedConnections, function(e) {
@@ -98,14 +95,14 @@ var App = {
         App.closeAllInfoWindows();
         App.setActiveMissedConnection(marker);
         App.moveToMarker(marker);
-        infoWindow.setContent(missedConnection.info_window_content);
-        infoWindow.open(App.map, marker);
+        marker.infoWindow.setContent(missedConnection.info_window_content);
+        marker.infoWindow.open(App.map, marker);
       }
     })(marker));
   },
 
-  addInfoWindowCloseClickEvent: function(infoWindow) {
-    google.maps.event.addListener(infoWindow, 'closeclick', (function() {
+  addInfoWindowCloseClickEvent: function(marker) {
+    google.maps.event.addListener(marker.infoWindow, 'closeclick', (function() {
       return function() {
         App.removeActiveMissedConnection();
       }
