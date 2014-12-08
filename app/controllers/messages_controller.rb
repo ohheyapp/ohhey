@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
   end
 
   def new
+    #TODO verify previous page was verification
     @message = Message.new
     @missed_connection = MissedConnection.find(params[:missed_connection_id])
     @missed_connections = [@missed_connection]
