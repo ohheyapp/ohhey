@@ -55,8 +55,7 @@ var App = {
   },
 
   moveToMarker: function(marker) {
-    var position = new google.maps.LatLng(marker.latitude, marker.longitude);
-    App.map.panTo(position);
+    App.map.panTo(marker.position);
     App.map.setZoom(15);
   },
 
@@ -94,9 +93,9 @@ var App = {
         })[0];
         App.closeAllInfoWindows();
         App.setActiveMissedConnection(marker);
-        App.moveToMarker(marker);
         marker.infoWindow.setContent(missedConnection.info_window_content);
         marker.infoWindow.open(App.map, marker);
+        App.moveToMarker(marker);
       }
     })(marker));
   },
