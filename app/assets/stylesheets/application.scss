@@ -30,10 +30,6 @@ body {
   }
 }
 
-#logo {
-  margin-top: 40px;
-}
-
 .alerts {
   margin-top: 10px;
 }
@@ -42,5 +38,6 @@ body {
   height: 100%;
   position: absolute;
   overflow-y: scroll;
+  padding-top: 40px;
   padding-bottom: 40px;
 }
