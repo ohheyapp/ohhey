@@ -3,7 +3,6 @@
 <head>
 <title>Oh hey</title>
   <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-  <%= stylesheet_link_tag    'http://fonts.googleapis.com/css?family=Lobster+Two:400' %>
   <%= stylesheet_link_tag    'http://fonts.googleapis.com/css?family=Lato' %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?sensor=false' %>
@@ -25,7 +24,6 @@
           <% end %>
 
           <%= link_to image_tag('logo.png'), root_path, class: 'img-responsive', id: 'logo' %>
-          <p class="tagline">Missed Connections</p>
         </div>
         <div class="text-center navigation">
           <% if current_user %>
