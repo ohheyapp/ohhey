@@ -114,6 +114,7 @@ var App = {
 
   setBoundsOfSingleMarker: function(marker) {
     google.maps.event.trigger(marker, 'click');
+    App.map.setZoom(17);
   }
 }
 
