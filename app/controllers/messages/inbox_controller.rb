@@ -4,6 +4,5 @@ class Messages::InboxController < ApplicationController
   def index
     @message_groups = current_user.received_messages.group_by(&:missed_connection)
   end
-
 end
 

@@ -4,5 +4,4 @@ class Messages::SentController < ApplicationController
   def index
     @message_groups = current_user.sent_messages.group_by(&:missed_connection)
   end
-
 end
