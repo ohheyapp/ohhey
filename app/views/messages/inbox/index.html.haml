@@ -6,7 +6,6 @@
 - @message_groups.each do |missed_connection, messages|
   %h5= "Missed Connection at #{missed_connection.location}."
   - messages.each do |message|
-    %p.subject= "Subject: #{message.subject}"
     %strong= "From: #{message.sender.email}."
     %br
     %p.messagebody= simple_format(message.body)
