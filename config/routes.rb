@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   root 'missed_connections#index'
   devise_for :users
 
-  resources :messages
+  namespace :messages do
+    resources :inbox, :sent, only: [:index]
+  end
+
   resources :missed_connections do
-    resources :messages
+    resources :messages, only: [:new, :create]
     resources :verifications, controller: :missed_connection_verifications
   end
 

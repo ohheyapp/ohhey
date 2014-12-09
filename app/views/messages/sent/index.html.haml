@@ -1,0 +1,15 @@
+%h4 Sent Messages
+%strong= link_to 'Received Messages', messages_inbox_index_path
+%br
+%hr
+
+#accordion
+- @message_groups.each do |missed_connection, messages|
+  %h5= "Missed Connection at #{missed_connection.location}."
+  - messages.each do |message|
+    %p.subject= "Subject: #{message.subject}"
+    %strong= "From: #{message.sender.email}."
+    %br
+    %p.messagebody= simple_format(message.body)
+    = link_to 'Reply', new_missed_connection_message_path(missed_connection_id: missed_connection.id), class: 'btn btn-primary'
+    %hr
