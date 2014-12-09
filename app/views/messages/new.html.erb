@@ -1,9 +1,9 @@
 <h4>Compose your message</h4>
+<hr>
 
 <%= form_for [@missed_connection, @message] do |f| %>
   <div class="form-group">
     <%= f.text_area :body, class: 'form-control send-message' %>
   </div>
-  <%= f.hidden_field :missed_connection_id, value: @missed_connection.id %>
   <%= f.submit 'Send Message', class: 'btn btn-primary' %>
 <% end %>

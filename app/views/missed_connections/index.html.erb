@@ -1,4 +1,6 @@
 <h4>Missed Connections</h4>
+<hr>
+
 <% @missed_connections.each do |missed_connection| %>
   <p>
     <%= link_to missed_connection.title, '#', class: 'missed-connection', data: { 'missed-connection-id' => missed_connection.id, 'latitude' => missed_connection.latitude, 'longitude' => missed_connection.longitude } %>

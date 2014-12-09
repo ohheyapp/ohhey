@@ -29,16 +29,23 @@ p {
   height: 100%;
   position: absolute;
   overflow-y: scroll;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 20px 40px 40px 40px;
 
   .navigation {
-    margin-bottom: 40px;
-
+    margin-bottom: 10px;
     a, p {
       margin: 0;
       font-size: 14px;
     }
+  }
+
+  .alert {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .header {
+    margin-bottom: 10px;
   }
 
   a {

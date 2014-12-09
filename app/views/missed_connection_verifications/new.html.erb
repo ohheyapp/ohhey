@@ -1,11 +1,11 @@
-<h4>Missed Connection Verification</h4>
+<h4>Was it really you?</h4>
+<hr>
 
 <%= form_for :verification, url: missed_connection_verifications_path(missed_connection_id: @missed_connection.id), method: :post do |f| %>
   <div class="form-group">
     <%= f.label @missed_connection.question %>
-    <br>
     <%= f.text_field :text, class: 'form-control' %>
-    <br><br>
+    <br>
     <%= f.submit "See if it's love", class: 'btn btn-primary'  %>
   </div>
 <% end %>

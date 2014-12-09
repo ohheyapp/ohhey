@@ -17,26 +17,29 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4" id="sidebar">
-        <div class="alerts text-center">
-          <% if notice %>
-            <p class="alert alert-success"><%= notice %></p>
-          <% end %>
-          <% if alert %>
-            <p class="alert alert-warning"><%= alert %></p>
-          <% end %>
-
+        <div class="header">
+          <div class="alerts text-center">
+            <% if notice %>
+              <p class="alert alert-success"><%= notice %></p>
+            <% end %>
+            <% if alert %>
+              <p class="alert alert-warning"><%= alert %></p>
+            <% end %>
+          </div>
           <%= link_to image_tag('logo.svg'), root_path, class: 'img-responsive', id: 'logo' %>
+          <div class="text-center navigation">
+            <% if current_user %>
+              <p><%= link_to 'Create', new_missed_connection_path %> |
+              <%= link_to 'Messages', messages_inbox_index_path%> |
+              <%= link_to 'Log Out', destroy_user_session_path, method: :delete %></p>
+            <% else %>
+              <p><%= link_to 'Sign up', new_user_registration_path %> |
+              <%= link_to 'Login', new_user_session_path %></p>
+            <% end %>
+          </div>
         </div>
-        <div class="text-center navigation">
-          <% if current_user %>
-            <p><%= link_to 'Create', new_missed_connection_path %> |
-            <%= link_to 'Messages', messages_inbox_index_path%> |
-            <%= link_to 'Log Out', destroy_user_session_path, method: :delete %></p>
-          <% else %>
-            <p><%= link_to 'Sign up', new_user_registration_path %> |
-            <%= link_to 'Login', new_user_session_path %></p>
-          <% end %>
-        </div>
+
+        <hr>
 
         <div class="text-center">
           <%= yield %>

@@ -1,12 +1,10 @@
+%h4 New Missed Connection
+%hr
+
 = simple_form_for @missed_connection,  :defaults => { :wrapper_html => {:class => 'form-group'}, :input_html => { :class => 'form-control' } } do |f|
   = f.input :location, required: true
-  %br
   = f.input :title
-  %br
   = f.input :body
-  %br
   = f.input :question
-  %br
   = f.input :answer
-  %br
   = f.button :submit, class: 'btn btn-primary'
