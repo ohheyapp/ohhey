@@ -25,6 +25,10 @@ p {
   margin: 0 auto;
 }
 
+h5 {
+  font-size: 20px;
+}
+
 #sidebar {
   height: 100%;
   position: absolute;
@@ -54,16 +58,18 @@ p {
     margin-bottom: 10px;
   }
 
-  a {
-    color: #352E30;
-    font-family: 'Lato', sans-serif;
-    &:hover {
-      color: #999999;
+  .missed-connections {
+    a {
+      color: #352E30;
+      font-family: 'Lato', sans-serif;
+      &:hover {
+        color: #999999;
+      }
     }
-  }
 
-  .active {
-    color: #1ABC9C;
+    .active {
+      color: #1ABC9C;
+    }
   }
 }
 

@@ -1,10 +1,10 @@
 %h4 Sent Messages
-%strong= link_to 'Received Messages', messages_inbox_index_path
+= link_to 'Received Messages', messages_inbox_index_path, class: 'small'
 %hr
 
 #accordion
 - @message_groups.each do |missed_connection, messages|
-  %h5= "Missed Connection at #{missed_connection.location}."
+  %h5= "Missed Connection around #{missed_connection.location}."
   - messages.each do |message|
     %strong= "From: #{message.sender.email}."
     %br
