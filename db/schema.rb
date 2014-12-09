@@ -11,14 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206224725) do
+ActiveRecord::Schema.define(version: 20141209214031) do
 
   create_table "messages", force: true do |t|
-    t.string   "subject"
     t.text     "body"
     t.integer  "sender_id"
-    t.datetime "read_at"
-    t.boolean  "deleted"
     t.integer  "missed_connection_id"
     t.datetime "created_at"
     t.datetime "updated_at"

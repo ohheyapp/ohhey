@@ -43,7 +43,7 @@ MissedConnection.create(
 )
 
 MissedConnection.create(
-  location: ' 618 Grand St, Brooklyn, NY 11211',
+  location: '618 Grand St, Brooklyn, NY 11211',
   title: 'Put Put Champion',
   body: 'You you killing it at put put, but left before I could buy you a pickle back.',
   user_id: 1,
