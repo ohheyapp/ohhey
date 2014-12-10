@@ -6,7 +6,7 @@ var App = {
   baseUrl: '/api/v1/missed_connections/',
 
   initialize: function() {
-    var missedConnectionParam = window.location.pathname.match(/missed_connections\/(\d)/);
+    var missedConnectionParam = window.location.pathname.match(/missed_connections\/(\d*)/);
     var mapOptions = {
       zoom: 14,
       center: new google.maps.LatLng(40.706709, -73.923516)
