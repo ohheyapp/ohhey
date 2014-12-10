@@ -6,9 +6,9 @@ Rails.application.routes.draw do
     resources :inbox, :sent, only: [:index]
   end
 
-  resources :missed_connections do
+  resources :missed_connections, only: [:index, :show, :new, :create] do
     resources :messages, only: [:new, :create]
-    resources :verifications, controller: :missed_connection_verifications
+    resources :verifications, controller: :missed_connection_verifications, only: [:new, :create]
   end
 
   namespace :api, defaults: {format: :json} do
