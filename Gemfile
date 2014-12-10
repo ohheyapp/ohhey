@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'pg'
 gem 'devise'
 gem 'haml'
 gem 'simple_form', '~> 3.1.0rc1'
@@ -19,14 +20,12 @@ gem 'active_model_serializers'
 group :production do
   gem 'unicorn'
   gem 'rails_12factor'
-  gem 'pg'
   gem 'newrelic_rpm'
   gem 'raygun4ruby'
 end
 
 group :development do
   gem 'spring'
-  gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'awesome_print'

@@ -20,6 +20,9 @@ module Ohhey
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    # Add lib/ to ActiveSupport autoload paths
+    config.autoload_paths += %W(#{config.root}/lib)
+
     # Add fonts to precompilation
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
   end
