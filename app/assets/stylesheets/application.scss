@@ -25,6 +25,12 @@ p {
   margin: 0 auto;
 }
 
+h4, .h4 {
+font-size: 25px;
+color: #51C0A6;
+font-weight: 500;
+}
+
 h5 {
   font-size: 20px;
 }
@@ -46,6 +52,8 @@ h5 {
     a, p {
       margin: 0;
       font-size: 14px;
+      padding: 7px;
+      color: #51C0A6;
     }
   }
 
