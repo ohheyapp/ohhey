@@ -5,6 +5,13 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+
+    if params[:receiver_id].nil?
+      @message.receiver_id = set_missed_connection.user_id
+    else
+      @message.receiver_id = params[:receiver_id]
+    end
+
   end
 
   def create

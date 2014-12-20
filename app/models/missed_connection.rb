@@ -4,6 +4,8 @@ class MissedConnection < ActiveRecord::Base
 
   before_save :set_location
 
+  default_scope -> { where(active: true) }
+
   private
 
   def set_location
