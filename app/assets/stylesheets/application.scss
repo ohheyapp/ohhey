@@ -37,6 +37,7 @@ h5 {
 }
 
 #sidebar {
+
   height: 100%;
   //position: absolute;
   overflow-y: scroll;
@@ -82,6 +83,15 @@ h5 {
   }
 }
 
+.pagination {
+  color: #51C0A6;
+  a {
+    color: #A3A2A3;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+  }
+}
+
 #map-canvas {
   //height: 300px;
   //position: absolute;
@@ -96,4 +106,4 @@ h5 {
   }
 }
 
-html, body, .container-fluid, .row, .col-xs-11 { height: 100% }
+html, body, .container-fluid, .row, .col-xs-6 { height: 100% }

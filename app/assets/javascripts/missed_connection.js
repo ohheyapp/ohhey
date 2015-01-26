@@ -9,7 +9,7 @@ var App = {
     var missedConnectionParam = window.location.pathname.match(/missed_connections\/(\d*)/);
     var mapOptions = {
       zoom: 12,
-      center: new google.maps.LatLng(40.706709, -73.923516)
+      center: new google.maps.LatLng(40.711815, -73.968449)
     };
 
     App.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
