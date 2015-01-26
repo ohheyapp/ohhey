@@ -17,6 +17,7 @@ gem 'geocoder'
 gem 'pry-rails'
 gem 'active_model_serializers'
 gem 'jquery-turbolinks'
+gem 'will_paginate'
 
 group :production do
   gem 'unicorn'
