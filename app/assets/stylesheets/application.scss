@@ -23,6 +23,13 @@ body {
 
 p {
   margin: 0 auto;
+  line-height: 24px;
+}
+
+h4, .h4 {
+font-size: 25px;
+color: #51C0A6;
+font-weight: 500;
 }
 
 h5 {
@@ -46,6 +53,8 @@ h5 {
     a, p {
       margin: 0;
       font-size: 14px;
+      padding: 7px;
+      color: #51C0A6;
     }
   }
 
@@ -60,11 +69,9 @@ h5 {
 
   .missed-connections {
     a {
-      color: #352E30;
+      color: #A3A2A3;
       font-family: 'Lato', sans-serif;
-      &:hover {
-        color: #999999;
-      }
+      font-weight: lighter;
     }
 
     .active {
