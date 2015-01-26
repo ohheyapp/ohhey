@@ -8,7 +8,7 @@ var App = {
   initialize: function() {
     var missedConnectionParam = window.location.pathname.match(/missed_connections\/(\d*)/);
     var mapOptions = {
-      zoom: 14,
+      zoom: 12,
       center: new google.maps.LatLng(40.706709, -73.923516)
     };
 

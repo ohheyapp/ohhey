@@ -30,8 +30,8 @@ h5 {
 }
 
 #sidebar {
-  height: 100%;
-  position: absolute;
+  //height: 100%;
+  //position: absolute;
   overflow-y: scroll;
   padding: 20px 40px 40px 40px;
 
@@ -74,14 +74,17 @@ h5 {
 }
 
 #map-canvas {
-  height: 100%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  //height: 300px;
+  //position: absolute;
+  //right: 0;
+  //top: 0;
+  //bottom: 0;
   overflow: hidden;
+  //width: 100%;
 
   .gm-style-iw {
     width: 300px;
   }
 }
+
+html, body, .container-fluid, .row, .col-xs-11 { height: 100% }

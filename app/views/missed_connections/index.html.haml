@@ -1,0 +1,8 @@
+%h4 Missed Connections
+%hr
+
+%ul.missed-connections
+  - @missed_connections.each do |missed_connection|
+    %li
+      = link_to missed_connection.title, '#', class: 'missed-connection text-center', data: { 'missed-connection-id' => missed_connection.id, 'latitude' => missed_connection.latitude, 'longitude' => missed_connection.longitude }
+= will_paginate @missed_connections
