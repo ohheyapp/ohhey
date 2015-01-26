@@ -25,18 +25,18 @@
               %p
                 .alert.alert-warming= alert
           = link_to image_tag('logo.svg'), root_path, class: 'img-responsive', id: 'logo'
-          .text-center.navigation
+          %ul.text-center.navigation
             - if current_user
-              %p
+              %li
                 = link_to 'Create', new_missed_connection_path
-              %p
+              %li
                 = link_to 'Messages', messages_inbox_index_path
-              %p
+              %li
                 = link_to 'Log Out', destroy_user_session_path, method: :delete
             - else
-              %p
+              %li
                 = link_to 'Sign up', new_user_registration_path
-              %p
+              %li
                 = link_to 'Login', new_user_session_path
 
         %hr
