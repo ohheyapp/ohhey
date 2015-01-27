@@ -10,4 +10,9 @@ class User < ActiveRecord::Base
   has_many :sent_messages,
            :class_name => 'Message',
            :foreign_key => 'sender_id'
+
+  def masked_email
+    Digest::SHA1.hexdigest(self.email)[0,8]
+  end
+
 end

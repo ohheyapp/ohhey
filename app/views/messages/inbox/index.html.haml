@@ -12,7 +12,7 @@
       .panel-collapse.collapse{:id => "collapse-#{missed_connection.id}"}
         .panel-body
           - messages.each do |message|
-            %strong= "From: #{message.sender.email}."
+            %strong= "From: #{message.sender.masked_email}."
             %br
             %p.messagebody= simple_format(message.body)
             = link_to 'Reply', new_missed_connection_message_path(missed_connection_id: missed_connection.id, :receiver_id => message.sender.id), class: 'btn btn-primary'
