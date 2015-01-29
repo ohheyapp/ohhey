@@ -2,6 +2,9 @@
 %hr
 
 = simple_form_for @missed_connection,  :defaults => { :wrapper_html => {:class => 'form-group'}, :input_html => { :class => 'form-control' } } do |f|
+  - if current_user.nil?
+    = f.simple_fields_for :users do |d|
+      = d.input :email, required: true
   = f.input :location, required: true
   = f.input :title
   = f.input :body

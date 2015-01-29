@@ -2,6 +2,10 @@ class MissedConnection < ActiveRecord::Base
   belongs_to :user
   has_many :messages
 
+  attr_accessor :email
+
+  accepts_nested_attributes_for :user
+
   before_save :set_location, :strip_answer
 
   default_scope -> { where(active: true) }

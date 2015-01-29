@@ -27,9 +27,9 @@
                 .alert.alert-warming= alert
           = link_to image_tag('logo.svg'), root_path, class: 'img-responsive', id: 'logo'
           %ul.text-center.navigation
+            %li
+              = link_to 'Create', new_missed_connection_path
             - if current_user
-              %li
-                = link_to 'Create', new_missed_connection_path
               %li
                 = link_to 'Messages', messages_inbox_index_path
               %li

@@ -1,5 +1,5 @@
 class MissedConnectionsController < ApplicationController
-  before_action :authenticate_user!, :except => [:index]
+  before_action :authenticate_user!, :except => [:index, :new, :create, :show]
 
   def index
     @missed_connections = MissedConnection.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 10)
@@ -14,7 +14,14 @@ class MissedConnectionsController < ApplicationController
   end
 
   def create
-    @missed_connection = MissedConnection.new(missed_connection_params.merge(user_id: current_user.id))
+
+    if current_user
+      @missed_connection = MissedConnection.new(missed_connection_params.merge(user_id: current_user.id))
+    else
+      password = Devise.friendly_token[0,20]
+      @user = User.create_with(email: params[:missed_connection][:users][:email], password: password, password_confirmation: password).find_or_create_by(email: params[:missed_connection][:users][:email])
+      @missed_connection = MissedConnection.new(missed_connection_params.merge(user_id: @user.id))
+    end
 
     if @missed_connection.save
       redirect_to root_path, notice: 'Saved!'
