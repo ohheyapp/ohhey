@@ -14,5 +14,4 @@ class User < ActiveRecord::Base
   def masked_email
     Digest::SHA1.hexdigest(self.email)[0,8]
   end
-
 end
