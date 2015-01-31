@@ -15,6 +15,7 @@ gem 'haml'
 gem 'simple_form', '~> 3.1.0rc1'
 gem 'geocoder'
 gem 'pry-rails'
+gem 'binding_of_caller'
 gem 'active_model_serializers'
 gem 'jquery-turbolinks'
 gem 'will_paginate'
@@ -29,6 +30,19 @@ end
 group :development do
   gem 'spring'
   gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'awesome_print'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'shoulda-matchers'
+  gem 'faker'
+  gem 'database_cleaner'
+  gem 'simplecov'
 end
