@@ -5,6 +5,7 @@ var App = {
   missedConnections: [],
   baseUrl: '/api/v1/missed_connections/',
 
+  //FUNCTION TO ADD POINTS TO MAP AND SET MAP LOCATION TO BUSHWICK
   initialize: function() {
     var missedConnectionParam = window.location.pathname.match(/missed_connections\/(\d*)/);
     var mapOptions = {
@@ -20,6 +21,7 @@ var App = {
       var url = App.baseUrl;
     }
 
+    //AJAX REQUEST TO ADD MARKERS TO MAP FROM MISSED CONNECTION DATA
     $.ajax({
       url: url,
       success: function(data) {
@@ -49,26 +51,31 @@ var App = {
     }
   },
 
+  //PANS TO SPECIFIC GOOGLE MAP MARKER WHEN CLICKED FROM MENU, SETS ZOOM
   moveToMarker: function(marker) {
     App.map.panTo(marker.position);
     App.map.setZoom(15);
   },
 
+  //OPENS MARKER INFO BOX ON MISSED CONNECTION
   setActiveMissedConnection: function(missedConnection) {
     App.removeActiveMissedConnection();
     $('.missed-connection[data-missed-connection-id="' + missedConnection.id + '"]').addClass('active');
   },
 
+  //REMOVES MARKER INFO BOX ON MISSED CONNECTION
   removeActiveMissedConnection: function() {
     $('.missed-connection[data-missed-connection-id]').removeClass('active');
   },
 
+  //CLOSES MARKER WINDOW ON GOOGLE MAP POINT
   closeAllInfoWindows: function() {
     for (i = 0; i < App.missedConnections.length; i++) {
       App.missedConnections[i].marker.infoWindow.close();
     }
   },
 
+  
   addMissedConnectionLinkEvent: function() {
     $('.missed-connection').click(function(event) {
       event.preventDefault();
