@@ -75,7 +75,7 @@ var App = {
     }
   },
 
-  
+  //OPENS CORRECT DATA FOR MISSED CONNECTION MAP POINT USING ID #
   addMissedConnectionLinkEvent: function() {
     $('.missed-connection').click(function(event) {
       event.preventDefault();
@@ -87,6 +87,7 @@ var App = {
     });
   },
 
+  //FORMATTING FOR MISSED CONNECTION INFO INSIDE MISSED CONNECTION INFO BOX @ MARKER
   addMarkerClickEvent: function(missedConnection) {
     google.maps.event.addListener(missedConnection.marker, 'click', (function(missedConnection) {
       return function() {
@@ -103,6 +104,7 @@ var App = {
     })(missedConnection));
   },
 
+  //CLOSES INFO WINDOW ON MARKER
   addInfoWindowCloseClickEvent: function(missedConnection) {
     google.maps.event.addListener(missedConnection.marker.infoWindow, 'closeclick', (function() {
       return function() {
@@ -111,6 +113,7 @@ var App = {
     })());
   },
 
+  //SETS MAP BOUNDS FOR SINGLE MARKER 
   setBoundsOfSingleMarker: function(marker) {
     google.maps.event.trigger(marker, 'click');
     App.map.setZoom(17);
