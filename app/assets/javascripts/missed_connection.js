@@ -75,11 +75,7 @@ var App = {
     }
   },
 
-<<<<<<< HEAD
   //OPENS CORRECT DATA FOR MISSED CONNECTION MAP POINT USING ID #
-=======
-  
->>>>>>> 9b0df8ffd6eb67e03740f1d5b2ed9e41c64ec201
   addMissedConnectionLinkEvent: function() {
     $('.missed-connection').click(function(event) {
       event.preventDefault();
