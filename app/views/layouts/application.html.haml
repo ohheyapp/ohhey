@@ -18,32 +18,16 @@
   .container-fluid
     .row
       #sidebar.col-xs-8.col-sm-6.col-md-4.col-lg-4
-        .header
-          .alerts.text-center
-            - if notice
-              %p
-                .alert.alert-success= notice
-            - if alert
-              %p
-                .alert.alert-warming= alert
+        .alerts.text-center
+          - if notice
+            %p
+              .alert.alert-success= notice
+          - if alert
+            %p
+              .alert.alert-warming= alert
           / = link_to image_tag('logo.svg'), root_path, class: 'img-responsive', id: 'logo'
-          %ul.text-center.navigation
-            %li
-              = link_to 'Create', new_missed_connection_path
-            - if current_user
-              %li
-                = link_to 'Messages', messages_inbox_index_path
-              %li
-                = link_to 'Log Out', destroy_user_session_path, method: :delete
-            - else
-              %li
-                = link_to 'Sign up', new_user_registration_path
-              %li
-                = link_to 'Login', new_user_session_path
-
-        %hr
-        .text-center
-          = yield
+      .text-center
+        = yield
 
       #map-canvas.google-map-canvas.col-xs-4.col-sm-6.col-md-8.col-lg-8
 
