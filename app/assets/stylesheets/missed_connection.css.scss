@@ -3,5 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //
 .missed-connections {
-  list-style-type: none;
+	list-style-type: none;
+	position: absolute;
+	top: 60px;
+	left: -20px;
+	z-index: 99;
+	text-align: left;
 }
