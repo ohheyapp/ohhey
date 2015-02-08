@@ -1,6 +1,8 @@
 %ul.missed-connections
   - @missed_connections.each do |missed_connection|
     %li
+      .missed-connection.date
+        = missed_connection.created_at.in_time_zone('Eastern Time (US & Canada)')
       = link_to missed_connection.title.upcase, '#', class: 'missed-connection text-center', data: { 'missed-connection-id' => missed_connection.id, 'latitude' => missed_connection.latitude, 'longitude' => missed_connection.longitude }
       .missed-connection.body
         = missed_connection.body
