@@ -17,3 +17,15 @@ font-weight: 500;
 h5 {
   font-size: 20px;
 }
+
+.container-fluid {
+	position: fixed;
+	width: 100%;
+	overflow: hidden;
+	transform: translateZ(0px);
+	background-color: rgb(229, 227, 223);
+}
+
+.text-center {
+	position: absolute;
+}

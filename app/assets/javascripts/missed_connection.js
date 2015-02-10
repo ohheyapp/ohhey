@@ -18,7 +18,7 @@ var App = {
         position: google.maps.ControlPosition.RIGHT_TOP,
       },
       center: new google.maps.LatLng(40.711815, -73.968449),
-      styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
+      styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#C5E6E2"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#8ED0BC"}]}]
     };
 
     App.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -102,8 +102,6 @@ var App = {
         App.closeAllInfoWindows();
         App.setActiveMissedConnection(missedConnection);
         missedConnection.marker.infoWindow.setContent(
-          '<h4>' + missedConnection.title + '</h4>' + "\n" +
-          '<p>' + missedConnection.body + '</p><br>' + "\n" +
           '<a href="' + window.location.origin + missedConnection.verification_path + '">' + "That's Me!" + '</a>'
         )
         missedConnection.marker.infoWindow.open(App.map, missedConnection.marker);

@@ -19,7 +19,6 @@ gem 'binding_of_caller'
 gem 'active_model_serializers'
 gem 'jquery-turbolinks'
 gem 'will_paginate'
-gem 'stamp'
 
 group :production do
   gem 'unicorn'
