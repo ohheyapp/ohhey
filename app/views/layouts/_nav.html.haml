@@ -6,13 +6,18 @@
       %span.icon-bar
       %span.icon-bar
       %span.icon-bar
-    .navbar-brand= link_to 'oh hey', root_path
+    .navbar-brand
+      = link_to image_tag( 'HANDICON-01.png'), root_path
+      %h1
+        = link_to 'oh hey', root_path 
   / Collect the nav links, forms, and other content for toggling
   .collapse.navbar-collapse.navbar-ex1-collapse
     %ul.nav.navbar-nav.navbar-right
-      %li
-        = link_to 'Create', new_missed_connection_path
       - if current_user
+        %li.user
+          = current_user.email
+        %li
+          = link_to 'Create', new_missed_connection_path
         %li
           = link_to 'Messages', messages_inbox_index_path
         %li
@@ -24,7 +29,7 @@
           = link_to 'Login', new_user_session_path
       %li.dropdown
         %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-          Dropdown
+          Messages
           %b.caret
         %ul.dropdown-menu
           %li
