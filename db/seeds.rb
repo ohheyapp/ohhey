@@ -50,3 +50,21 @@ MissedConnection.create(
   question: 'What did I have a tattoo of?',
   answer: 'the deathly hallows'
 )
+
+MissedConnection.create(
+  location: '117 Wilson Ave, Brooklyn, NY 11237',
+  title: 'Slammin Style',
+  body: 'Spied you grabbing some dope shoes at Worship. I love your style. Lets hang out',
+  user_id: 1,
+  question: 'What color was my watch?',
+  answer: 'green'
+)
+
+MissedConnection.create(
+  location: '50 Starr Street, Brooklyn, NY 11221',
+  title: 'Tapas',
+  body: 'You were having dinner at El Mio Cid with what I presume was your boyfriend. Dump that dude and find me out in the wild.',
+  user_id: 1,
+  question: 'What color was my hair?',
+  answer: 'Red'
+)

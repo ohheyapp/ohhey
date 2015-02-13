@@ -1,8 +1,9 @@
-%h4 Missed Connections
-%hr
-
 %ul.missed-connections
   - @missed_connections.each do |missed_connection|
     %li
-      = link_to missed_connection.title, '#', class: 'missed-connection text-center', data: { 'missed-connection-id' => missed_connection.id, 'latitude' => missed_connection.latitude, 'longitude' => missed_connection.longitude }
-= will_paginate @missed_connections
+      .missed-connection.date
+        = missed_connection.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %B #{Time.now.day.ordinalize}")
+      = link_to missed_connection.title.upcase, '#', class: 'missed-connection text-center', data: { 'missed-connection-id' => missed_connection.id, 'latitude' => missed_connection.latitude, 'longitude' => missed_connection.longitude }
+      .missed-connection.body
+        = missed_connection.body
+  = will_paginate @missed_connections

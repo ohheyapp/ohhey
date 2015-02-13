@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0 auto;
+  line-height: 24px;
+}
+
+h4, .h4 {
+font-size: 25px;
+color: #51C0A6;
+font-weight: 500;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+.container-fluid {
+	position: fixed;
+	width: 100%;
+	overflow: hidden;
+	transform: translateZ(0px);
+	background-color: rgb(229, 227, 223);
+}
+
+.text-center {
+	position: absolute;
+}

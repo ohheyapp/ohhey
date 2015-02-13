@@ -14,113 +14,19 @@
  *= require missed_connection
  *= require messages
  *= require bootstrap-social
+ *= require body
+ *= require sidebar
  *= require footer
+ *= require nav
  *= require_self
+ *= require map-canvas
+ *= require new-sign-up
+ *= require log-in
+ *= require forgot-password
+ *= require inbox
+ *= require outbox
+ *= require verification
+ *= require new-message
 */
 
-body {
-  margin: 0;
-  padding: 0;
-}
 
-p {
-  margin: 0 auto;
-  line-height: 24px;
-}
-
-h4, .h4 {
-font-size: 25px;
-color: #51C0A6;
-font-weight: 500;
-}
-
-h5 {
-  font-size: 20px;
-}
-
-.text-center {
-  ul {
-    padding-left: 0px;
-  }
-}
-
-#sidebar {
-
-  height: 100%;
-  //position: absolute;
-  overflow-y: scroll;
-  padding: 20px 0px 40px 0px;
-
-  #logo {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 290px;
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-
-  .navigation {
-    list-style-type: none;
-    margin-bottom: 10px;
-    a, p, li {
-      margin: 0;
-      font-size: 14px;
-      padding: 7px;
-      color: #51C0A6;
-      display: inline;
-    }
-  }
-
-  .alert {
-    font-size: 14px;
-    padding: 5px;
-  }
-
-  .header {
-    margin-bottom: 10px;
-    ul {
-      padding-left: 0px;
-    }
-  }
-
-  .missed-connections {
-    a {
-      color: #A3A2A3;
-      font-family: 'Lato', sans-serif;
-      font-weight: lighter;
-    }
-
-    .active {
-      color: #1ABC9C;
-    }
-  }
-}
-
-.pagination {
-  color: #51C0A6;
-  a {
-    color: #A3A2A3;
-    font-family: 'Lato', sans-serif;
-    font-weight: lighter;
-  }
-}
-
-#map-canvas {
-  //height: 300px;
-  //position: absolute;
-  //right: 0;
-  //top: 0;
-  //bottom: 0;
-  overflow: hidden;
-  //width: 100%;
-
-  .gm-style-iw {
-    width: 300px;
-  }
-}
-
-html, body, .container-fluid, .row, .col-lg-8 { height: 100% }

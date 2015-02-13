@@ -1,10 +1,12 @@
-<h4>Compose your message</h4>
-<hr>
+<div class="new-message">
+	<h4>Compose your message</h4>
+	<hr>
 
-<%= form_for [@missed_connection, @message] do |f| %>
-  <div class="form-group">
-    <%= f.text_area :body, class: 'form-control send-message' %>
-    <%= f.hidden_field :receiver_id %>
-  </div>
-  <%= f.submit 'Send Message', class: 'btn btn-primary' %>
-<% end %>
+	<%= form_for [@missed_connection, @message] do |f| %>
+	  <div class="form-group">
+	    <%= f.text_area :body, class: 'form-control send-message' %>
+	    <%= f.hidden_field :receiver_id %>
+	  </div>
+	  <%= f.submit 'Send Message', class: 'btn btn-primary' %>
+	<% end %>
+</div>

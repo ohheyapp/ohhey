@@ -1,0 +1,32 @@
+%nav.nav#nav-sticky{role: "navigation"}
+  / Brand and toggle get grouped for better mobile display
+  .navbar-header
+    %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+      %span.sr-only Toggle navigation
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    .navbar-brand
+      = link_to image_tag( 'HANDICON-02.png'), root_path
+      %h1
+        = link_to 'oh hey', root_path 
+  / Collect the nav links, forms, and other content for toggling
+  .collapse.navbar-collapse.navbar-ex1-collapse
+    %ul.nav.navbar-nav.navbar-right
+      - if current_user
+        %li
+          = link_to 'Create', new_missed_connection_path
+        %li
+          = link_to 'Messages', messages_inbox_index_path
+        %li
+          = link_to 'Log Out', destroy_user_session_path, method: :delete
+        %li.user
+          == Oh hey, #{current_user.email}.
+      - else
+        %li
+          = link_to 'Sign up', new_user_registration_path
+        %li
+          = link_to 'Login', new_user_session_path
+
+      
+  / /.navbar-collapse

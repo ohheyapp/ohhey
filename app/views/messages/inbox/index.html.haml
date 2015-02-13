@@ -1,22 +1,21 @@
-%h4 Inbox
-= link_to 'Sent Messages', messages_sent_index_path, class: 'small'
-%hr
+.inbox
+  %h4 Inbox
+  = link_to 'Sent Messages', messages_sent_index_path, class: 'small'
 
-.panel-group{:id => "accordian", "role" => "tablist"}
-  - @message_groups.each do |missed_connection, messages|
-    .panel.panel-default
-      .panel-heading
-        %h4.panel-title
-          %a.accordion-toggle{"data-toggle" => "collapse", "data-parent" => "#accordion", :href => "#collapse-#{missed_connection.id}", "aria-expanded" => "false"}
-            Missed Connection around #{missed_connection.location}.
-      .panel-collapse.collapse{:id => "collapse-#{missed_connection.id}"}
-        .panel-body
-          - messages.each do |message|
-            %strong= "From: #{message.sender.masked_email}."
-            %br
-            %p.messagebody= simple_format(message.body)
-            = link_to 'Reply', new_missed_connection_message_path(missed_connection_id: missed_connection.id, :receiver_id => message.sender.id), class: 'btn btn-primary'
-            %hr
+  .panel-group{:id => "accordian", "role" => "tablist"}
+    - @message_groups.each do |missed_connection, messages|
+      .panel.panel-default
+        .panel-heading
+          %h4.panel-title
+            %a.accordion-toggle{"data-toggle" => "collapse", "data-parent" => "#accordion", :href => "#collapse-#{missed_connection.id}", "aria-expanded" => "false"}
+              Missed Connection around #{missed_connection.location}.
+        .panel-collapse.collapse{:id => "collapse-#{missed_connection.id}"}
+          .panel-body
+            - messages.each do |message|
+              %strong= "From: #{message.sender.masked_email}."
+              %br
+              %p.messagebody= simple_format(message.body)
+              = link_to 'Reply', new_missed_connection_message_path(missed_connection_id: missed_connection.id, :receiver_id => message.sender.id), class: 'btn btn-primary'
 
 
 //%h5= "Missed Connection around #{missed_connection.location}."
