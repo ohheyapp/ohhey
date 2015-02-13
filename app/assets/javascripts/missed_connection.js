@@ -12,6 +12,7 @@ var App = {
       zoom: 12,
       panControl: false,
       streetViewControl: false,
+      mapTypeControl: false,
       zoomControl: true,
       zoomControlOptions: {
         style: google.maps.ZoomControlStyle.LARGE,
