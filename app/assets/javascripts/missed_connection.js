@@ -96,16 +96,6 @@ var App = {
     });
   },
 
-  //SCROLLS SIDEBAR TO CORRECT MISSED CONNECTION WHEN USER CLICKS ON POINTER
-  scrollToMissedConnectionEvent: function() {
-    $('.missedConnection.marker').click(function(event) {
-      event.preventDefault();
-        $('html, body').animate({
-            scrollTo: $('.data-missed-connection-id').offset().top
-        }, 2000);
-    });
-  },
-
   //FORMATTING FOR MISSED CONNECTION INFO INSIDE MISSED CONNECTION INFO BOX @ MARKER
   addMarkerClickEvent: function(missedConnection) {
     google.maps.event.addListener(missedConnection.marker, 'click', (function(missedConnection) {
@@ -117,6 +107,9 @@ var App = {
         )
         missedConnection.marker.infoWindow.open(App.map, missedConnection.marker);
         App.moveToMarker(missedConnection.marker);
+        //scrolls to correct missed connection at sidebar using jquery plugin
+        //$('.missed-connections').scrollTo( $('.missed-connection[data-missed-connection-id="'+missedConnection.marker+'"]'), 800 );
+        console.log(missedConnection.marker);
       }
     })(missedConnection));
   },
