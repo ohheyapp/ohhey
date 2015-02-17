@@ -1,5 +1,5 @@
 class MissedConnectionVerificationsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :except => [:new]
 
   def new
     @missed_connection = MissedConnection.find(params[:missed_connection_id])
