@@ -8,18 +8,19 @@
 	top: 20px;
 	left: -20px;
 	text-align: left;
-}
 
-.missed-connections li {
-	background-color: #fff;
-	width: 360px;
-	height: 50px;
-	padding: 10px 10px 5px 10px;
-	margin: 0px 0px 5px 0px;
-	font-size: 25px;
-	font-weight: bolder;
-	display: table;
-	border-radius: 5px;
+	li {
+		background-color: #fff;
+		width: 360px;
+		height: 50px;
+		padding: 10px 10px 5px 10px;
+		margin: 0px 0px 5px 0px;
+		font-size: 25px;
+		font-weight: bolder;
+		display: table;
+		border-radius: 5px;
+
+	}
 }
 
 .missed-connection.body {
@@ -41,6 +42,10 @@
 .missed-connection.text-center {
 	position: inherit;
 	font-size: 71%;
+}
+
+.missed-connection.text-center.active {
+	color: #D89AA4;
 }
 
 .new-missed-connection {

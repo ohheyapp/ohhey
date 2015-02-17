@@ -96,6 +96,16 @@ var App = {
     });
   },
 
+  //SCROLLS SIDEBAR TO CORRECT MISSED CONNECTION WHEN USER CLICKS ON POINTER
+  scrollToMissedConnectionEvent: function() {
+    $('.missedConnection.marker').click(function(event) {
+      event.preventDefault();
+        $('html, body').animate({
+            scrollTo: $('.data-missed-connection-id').offset().top
+        }, 2000);
+    });
+  },
+
   //FORMATTING FOR MISSED CONNECTION INFO INSIDE MISSED CONNECTION INFO BOX @ MARKER
   addMarkerClickEvent: function(missedConnection) {
     google.maps.event.addListener(missedConnection.marker, 'click', (function(missedConnection) {
