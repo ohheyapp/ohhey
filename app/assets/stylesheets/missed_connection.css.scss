@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //
+$break-small: 320px;
+$break-large: 1200px;
+
 .missed-connections {
 	list-style-type: none;
 	position: absolute;
@@ -19,39 +22,41 @@
 		font-weight: bolder;
 		display: table;
 		border-radius: 5px;
+			@media screen and (max-width: $break-small) {
+    			width: 360px;
+    			height:50px
+  			}
+	}
 
+	.missed-connection.body {
+		font-size: 15px;
+		padding: 0px 0px 20px 0px;
+		margin: -10px 10px -10px 0px;
+		font-weight: normal;
+		line-height: 16px;
+	}
+
+	.missed-connection.date {
+		font-size: 11px;
+		padding: 0px 0px 0px 0px;
+		margin: 0px 0px -16px 1px;
+		color: #51C0A6;
+		position: inherit;
+	}
+
+	.missed-connection.text-center {
+		position: inherit;
+		font-size: 71%;
+	}
+
+	.missed-connection.text-center.active {
+		color: #D89AA4;
+	}
+
+	.new-missed-connection {
+		background-color: #fff;
+		padding: 5px 25px 20px 25px;
+		margin: 10px 0px 70px 10px;
+		border-radius: 10px;
 	}
 }
-
-.missed-connection.body {
-	font-size: 15px;
-	padding: 0px 0px 20px 0px;
-	margin: -10px 10px -10px 0px;
-	font-weight: normal;
-	line-height: 16px;
-}
-
-.missed-connection.date {
-	font-size: 11px;
-	padding: 0px 0px 0px 0px;
-	margin: 0px 0px -16px 1px;
-	color: #51C0A6;
-	position: inherit;
-}
-
-.missed-connection.text-center {
-	position: inherit;
-	font-size: 71%;
-}
-
-.missed-connection.text-center.active {
-	color: #D89AA4;
-}
-
-.new-missed-connection {
-	background-color: #fff;
-	padding: 5px 25px 20px 25px;
-	margin: 10px 0px 70px 10px;
-	border-radius: 10px;
-}
-
