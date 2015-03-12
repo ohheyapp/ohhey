@@ -1,9 +1,14 @@
 .new-missed-connection {
-	h4 {
-		color: #51C0A6;
-	}
+		h4 {
+			color: #51C0A6;
+		}
 
-	label.string.required {
-		color: #51C0A6;
-	}
+		label.string.required {
+			color: #51C0A6;
+		}
+
+	background-color: #fff;
+	padding: 5px 25px 20px 25px;
+	margin: 10px 0px 70px 10px;
+	border-radius: 10px;
 }
