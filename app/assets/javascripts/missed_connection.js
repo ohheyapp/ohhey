@@ -66,6 +66,21 @@ var App = {
     App.map.setZoom(15);
   },
 
+  goToPage: function() {
+
+  },
+
+  //scrolls to correct missed connection @ sidebar
+  scrollToMissedConnection: function(missedConnection){
+    $missedConnectionListItem = $('ul.missed-connections').find('[data-missed-connection-id=' + missedConnection.id.toString() + ']');
+    // console.log($missedConnectionListItem);
+    var heightToTop = $missedConnectionListItem.offset().top - 150;
+      $('html, body').animate({
+          scrollTop: heightToTop
+      }, 300);
+      return false;
+  },
+
   //OPENS MARKER INFO BOX ON MISSED CONNECTION
   setActiveMissedConnection: function(missedConnection) {
     App.removeActiveMissedConnection();
@@ -107,8 +122,7 @@ var App = {
         )
         missedConnection.marker.infoWindow.open(App.map, missedConnection.marker);
         App.moveToMarker(missedConnection.marker);
-        //scrolls to correct missed connection at sidebar using jquery plugin
-        //$('.missed-connections').scrollTo( $('.missed-connection[data-missed-connection-id="'+missedConnection.marker+'"]'), 800 );
+        App.scrollToMissedConnection(missedConnection);
         console.log(missedConnection.marker);
       }
     })(missedConnection));
