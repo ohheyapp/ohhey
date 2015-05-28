@@ -1,5 +1,5 @@
 class MissedConnectionsController < ApplicationController
-  before_action :authenticate_user!, :except => [:index, :new, :create, :show]
+  before_action :authenticate_user!, :except => [:index, :new, :show]
 
   def index
     @missed_connections = MissedConnection.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 10)
